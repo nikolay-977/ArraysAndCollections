@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -28,13 +29,15 @@ class MyCollectionsTest {
     void testBinarySearchWithComparator() {
         List<String> list = Arrays.asList("apple", "banana", "cherry", "date", "fig", "grape");
 
-        // С использованием натурального порядка
         assertEquals(1, MyCollections.binarySearch(list, "banana", Comparator.naturalOrder()));
         assertEquals(4, MyCollections.binarySearch(list, "fig", Comparator.naturalOrder()));
         // Элемент отсутствует
         assertEquals(-1, MyCollections.binarySearch(list, "kiwi", Comparator.reverseOrder()));
 
-        // С использованием обратного порядка
+    }
+
+    @Test
+    void testBinarySearchWithComparatorReversOrder() {
         List<String> reverseSortedList = Arrays.asList("grape", "fig", "date", "cherry", "banana", "apple");
 
         // Элемент присутствует
@@ -42,6 +45,5 @@ class MyCollectionsTest {
         assertEquals(1, MyCollections.binarySearch(reverseSortedList, "fig", Comparator.reverseOrder()));
         // Элемент отсутствует
         assertEquals(-1, MyCollections.binarySearch(reverseSortedList, "kiwi", Comparator.reverseOrder()));
-
     }
 }
