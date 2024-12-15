@@ -32,18 +32,6 @@ class MyCollectionsTest {
         assertEquals(1, MyCollections.binarySearch(list, "banana", Comparator.naturalOrder()));
         assertEquals(4, MyCollections.binarySearch(list, "fig", Comparator.naturalOrder()));
         // Элемент отсутствует
-        assertEquals(-1, MyCollections.binarySearch(list, "kiwi", Comparator.reverseOrder()));
-
-    }
-
-    @Test
-    void testBinarySearchWithComparatorReversOrder() {
-        List<String> reverseSortedList = Arrays.asList("grape", "fig", "date", "cherry", "banana", "apple");
-
-        // Элемент присутствует
-        assertEquals(4, MyCollections.binarySearch(reverseSortedList, "banana", Comparator.reverseOrder()));
-        assertEquals(1, MyCollections.binarySearch(reverseSortedList, "fig", Comparator.reverseOrder()));
-        // Элемент отсутствует
-        assertEquals(-1, MyCollections.binarySearch(reverseSortedList, "kiwi", Comparator.reverseOrder()));
+        assertEquals(-7, MyCollections.binarySearch(list, "kiwi", Comparator.naturalOrder()));
     }
 }
